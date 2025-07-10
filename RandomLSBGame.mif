@@ -1,0 +1,63 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 1800; -- 	LOADI	0
+0001: 1031; --     STORE	Score
+0002: 9805; -- 	OUT		Hex1   
+0003: 9000; -- 	IN		Switches
+0004: 9801; --     OUT		LEDs
+0005: 7803; --     JNZ		Check_All_SW_Down
+0006: 0832; -- 	LOAD	Random_Val
+0007: 3001; --     ADDI	1
+0008: 1032; --     STORE	Random_Val
+0009: 9000; --     IN		Switches
+000A: 9801; --     OUT		LEDs
+000B: 3834; --     AND		Bit9
+000C: 7006; --     JZERO	Check_SW9_Up
+000D: 0832; -- 	LOAD	Random_Val
+000E: 3835; --     AND		Bitmask_256
+000F: 1032; --     STORE	Random_Val
+0010: 7812; --     JNZ		Display_Random_Result
+0011: 3001; --     ADDI	1
+0012: 9804; --     OUT		Hex0
+0013: 9000; -- 	IN		Switches
+0014: 9801; --     OUT		LEDs
+0015: 3834; --     AND		Bit9
+0016: 702B; --     JZERO	Reset_Score
+0017: 9000; -- 	IN		Switches
+0018: 9801; --     OUT		LEDs
+0019: 3835; --     AND		Bitmask_256
+001A: 7013; --     JZERO	Check_SW9_Down
+001B: 9000; -- 	IN		Switches
+001C: 9801; --     OUT		LEDs
+001D: 102F; --     STORE	SW_Input
+001E: 0832; --     LOAD	Random_Val
+001F: 382F; --     AND		SW_Input
+0020: 702B; --     JZERO	Reset_Score
+0021: 082F; --     LOAD	SW_Input
+0022: 37FF; --     ADDI	-1
+0023: 1030; --     STORE	Temp
+0024: 0832; --     LOAD	Random_Val
+0025: 3830; --     AND		Temp
+0026: 782B; --     JNZ		Reset_Score
+0027: 0831; -- 	LOAD	Score
+0028: 3001; --     ADDI	1
+0029: 1031; --     STORE	Score
+002A: 5803; -- 	JUMP	Check_All_SW_Down
+002B: 1800; -- 	LOADI	0
+002C: 1031; --     STORE	Score
+002D: 5803; --     JUMP	Check_All_SW_Down
+002E: 582E; -- 	JUMP	EOP
+002F: 0000; -- SW_Input:  	DW 0
+0030: 0000; -- Temp:		DW 0
+0031: 0000; -- Score:		DW 0
+0032: 0000; -- Random_Val:	DW 0
+0033: 0001; -- Bit0:      		DW &B0000000001
+0034: 0200; -- Bit9:      		DW &B1000000000
+0035: 00FF; -- Bitmask_256:	DW &H00FF
+[0036..07FF] : 0000; -- [empty memory]
+END;

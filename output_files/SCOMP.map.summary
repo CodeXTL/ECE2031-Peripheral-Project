@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Tue Jul  1 17:36:08 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : SCOMP
+Top-level Entity Name : SCOMP_System
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 258
+Total pins : 64
+Total virtual pins : 0
+Total block memory bits : 32,768
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1
+Total DLLs : 0

@@ -1,0 +1,63 @@
+WIDTH=16;
+DEPTH=2048;
+
+ADDRESS_RADIX=HEX;
+DATA_RADIX=HEX;
+
+CONTENT BEGIN
+0000: 9000; -- 	IN     	Switches
+0001: 9801; -- 	OUT    	LEDs
+0002: 1030; -- 	STORE  	Pattern
+0003: 1031; --     STORE	Temp_Pattern
+0004: 1800; --     LOADI	0
+0005: 1032; --     STORE	Bit_Count
+0006: 1033; --     STORE	Num_Checked_Bits
+0007: 0831; -- 	LOAD	Temp_Pattern
+0008: 3834; -- 	AND		Bit0
+0009: 700D; --     JZERO	No_Increment
+000A: 0832; --     LOAD	Bit_Count
+000B: 3001; --     ADDI	1
+000C: 1032; --     STORE	Bit_Count
+000D: 0833; -- 	LOAD	Num_Checked_Bits
+000E: 3001; --     ADDI	1
+000F: 1033; --     STORE	Num_Checked_Bits
+0010: 0831; -- 	LOAD	Temp_Pattern
+0011: 5011; --     SHIFT	-1
+0012: 1031; --     STORE	Temp_Pattern
+0013: 0832; --     LOAD	Bit_Count
+0014: 37FE; --     ADDI	-2
+0015: 6800; --     JPOS	Main
+0016: 0833; --     LOAD	Num_Checked_Bits
+0017: 37F0; --     ADDI	-16
+0018: 7807; --     JNZ		Count_Bits
+0019: 802B; -- 	CALL	Delay
+001A: 0830; -- 	LOAD	Pattern
+001B: 3835; -- 	AND		Bit9         ; bit mask
+001C: 7822; -- 	JNZ    	Right        ; bit9 is 1; go right
+001D: 0830; -- 	LOAD   	Pattern
+001E: 5001; -- 	SHIFT  	1
+001F: 1030; -- 	STORE  	Pattern
+0020: 9801; -- 	OUT    	LEDs
+0021: 5819; -- 	JUMP   	Left
+0022: 802B; -- 	CALL   	Delay
+0023: 0830; -- 	LOAD   	Pattern
+0024: 3834; -- 	AND    	Bit0         ; bit mask
+0025: 7819; -- 	JNZ    	Left         ; bit0 is 1; go left
+0026: 0830; -- 	LOAD   	Pattern
+0027: 5011; -- 	SHIFT  	-1
+0028: 1030; -- 	STORE  	Pattern
+0029: 9801; -- 	OUT    	LEDs
+002A: 5822; -- 	JUMP   Right
+002B: 9802; -- 	OUT    	Timer
+002C: 9002; -- 	IN     	Timer
+002D: 37FB; -- 	ADDI   	-5
+002E: 602C; -- 	JNEG   	WaitingLoop
+002F: 8800; -- 	RETURN
+0030: 0000; -- Pattern:   			DW 0
+0031: 0000; -- Temp_Pattern:		DW 0
+0032: 0000; -- Bit_Count:			DW 0
+0033: 0000; -- Num_Checked_Bits:	DW 0
+0034: 0001; -- Bit0:      	DW &B0000000001
+0035: 0200; -- Bit9:      	DW &B1000000000
+[0036..07FF] : 0000; -- [empty memory]
+END;
