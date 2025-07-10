@@ -1,0 +1,65 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 16 16 256 144)
+	(text "HEX_DISP_6" (rect 5 0 81 14)(font "Intel Clear" (font_size 8)))
+	(text "inst" (rect 8 112 24 124)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "resetn" (rect 0 0 36 14)(font "Intel Clear" (font_size 8)))
+		(text "resetn" (rect 21 27 57 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "IO_ADDR[10..0]" (rect 0 0 94 14)(font "Intel Clear" (font_size 8)))
+		(text "IO_ADDR[10..0]" (rect 21 43 115 57)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "IO_WRITE" (rect 0 0 59 14)(font "Intel Clear" (font_size 8)))
+		(text "IO_WRITE" (rect 21 59 80 73)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "IO_DATA[15..0]" (rect 0 0 93 14)(font "Intel Clear" (font_size 8)))
+		(text "IO_DATA[15..0]" (rect 21 75 114 89)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "segments[41..0]" (rect 0 0 95 14)(font "Intel Clear" (font_size 8)))
+		(text "segments[41..0]" (rect 124 27 219 41)(font "Intel Clear" (font_size 8)))
+		(line (pt 240 32)(pt 224 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 224 112))
+	)
+)
