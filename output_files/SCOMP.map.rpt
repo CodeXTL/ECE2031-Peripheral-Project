@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Tue Jul  1 17:36:08 2025
+Fri Jul 11 18:04:53 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -16,19 +16,20 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |SCOMP_System|SCOMP:inst|state
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated
- 15. Parameter Settings for User Entity Instance: PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated
  16. Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component
  17. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter
  18. Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus
- 19. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+ 19. Parameter Settings for User Entity Instance: PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i
+ 20. Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -55,13 +56,13 @@ on the Quartus Prime software download page.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Jul  1 17:36:08 2025           ;
+; Analysis & Synthesis Status     ; Successful - Fri Jul 11 18:04:53 2025           ;
 ; Quartus Prime Version           ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                   ; SCOMP                                           ;
 ; Top-level Entity Name           ; SCOMP_System                                    ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 258                                             ;
+; Total registers                 ; 234                                             ;
 ; Total pins                      ; 64                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 32,768                                          ;
@@ -168,11 +169,11 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 20          ;
-; Maximum allowed            ; 14          ;
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 14          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -181,8 +182,7 @@ on the Quartus Prime software download page.
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processors 8-14        ;   0.0%      ;
+;     Processors 7-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -191,17 +191,15 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+----------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                    ; Library  ;
 +----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+----------+
-; HEX_DISP.vhd                     ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd                      ;          ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_OUT.vhd                       ;          ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_IN.vhd                        ;          ;
-; clk_div.vhd                      ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/clk_div.vhd                       ;          ;
-; TIMER.vhd                        ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/TIMER.vhd                         ;          ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                         ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd                         ;          ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP_System.bdf                  ;          ;
-; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File      ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP_6.bdf                    ;          ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main.vhd                      ; PLL_main ;
-; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v          ; PLL_main ;
-; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altera_pll.v          ;          ;
+; ADV_HEX_DISP_CTRL.vhd            ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd         ;          ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_OUT.vhd                   ;          ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd                    ;          ;
+; clk_div.vhd                      ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/clk_div.vhd                   ;          ;
+; TIMER.vhd                        ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/TIMER.vhd                     ;          ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                         ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd                     ;          ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File      ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP_System.bdf              ;          ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File             ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main.vhd                  ; PLL_main ;
+; PLL_main/PLL_main_0002.v         ; yes             ; User Verilog HDL File                  ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main/PLL_main_0002.v      ; PLL_main ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;          ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;          ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;          ;
@@ -211,10 +209,11 @@ on the Quartus Prime software download page.
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;          ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;          ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;          ;
-; db/altsyncram_q934.tdf           ; yes             ; Auto-Generated Megafunction            ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/db/altsyncram_q934.tdf            ;          ;
-; MyRandomLSBGame.mif              ; yes             ; Auto-Found Memory Initialization File  ; E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/MyRandomLSBGame.mif               ;          ;
+; db/altsyncram_q934.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/db/altsyncram_q934.tdf        ;          ;
+; myrandomlsbgame.mif              ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/myrandomlsbgame.mif           ;          ;
 ; lpm_clshift.tdf                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_clshift.tdf       ;          ;
 ; lpm_bustri.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_bustri.tdf        ;          ;
+; altera_pll.v                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altera_pll.v          ;          ;
 +----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------+----------+
 
 
@@ -223,16 +222,16 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                             ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 279                                                                               ;
+; Estimate of Logic utilization (ALMs needed) ; 314                                                                               ;
 ;                                             ;                                                                                   ;
-; Combinational ALUT usage for logic          ; 361                                                                               ;
+; Combinational ALUT usage for logic          ; 429                                                                               ;
 ;     -- 7 input functions                    ; 2                                                                                 ;
-;     -- 6 input functions                    ; 81                                                                                ;
-;     -- 5 input functions                    ; 118                                                                               ;
-;     -- 4 input functions                    ; 50                                                                                ;
-;     -- <=3 input functions                  ; 110                                                                               ;
+;     -- 6 input functions                    ; 85                                                                                ;
+;     -- 5 input functions                    ; 88                                                                                ;
+;     -- 4 input functions                    ; 57                                                                                ;
+;     -- <=3 input functions                  ; 197                                                                               ;
 ;                                             ;                                                                                   ;
-; Dedicated logic registers                   ; 258                                                                               ;
+; Dedicated logic registers                   ; 234                                                                               ;
 ;                                             ;                                                                                   ;
 ; I/O pins                                    ; 64                                                                                ;
 ; Total MLAB memory bits                      ; 0                                                                                 ;
@@ -244,37 +243,31 @@ on the Quartus Prime software download page.
 ;     -- PLLs                                 ; 1                                                                                 ;
 ;                                             ;                                                                                   ;
 ; Maximum fan-out node                        ; PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 264                                                                               ;
-; Total fan-out                               ; 2878                                                                              ;
-; Average fan-out                             ; 3.77                                                                              ;
+; Maximum fan-out                             ; 282                                                                               ;
+; Total fan-out                               ; 2940                                                                              ;
+; Average fan-out                             ; 3.64                                                                              ;
 +---------------------------------------------+-----------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
-; |SCOMP_System                             ; 361 (22)            ; 258 (0)                   ; 32768             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                           ; SCOMP_System    ; work         ;
-;    |DIG_IN:inst7|                         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN          ; work         ;
-;    |DIG_OUT:inst6|                        ; 1 (1)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT         ; work         ;
-;    |HEX_DISP_6:inst9|                     ; 45 (3)              ; 24 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6      ; work         ;
-;       |HEX_DISP:inst1|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst1                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst2|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst2                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst3|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst3                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst4|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst4                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst5|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst5                                           ; HEX_DISP        ; work         ;
-;       |HEX_DISP:inst6|                    ; 7 (7)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|HEX_DISP_6:inst9|HEX_DISP:inst6                                           ; HEX_DISP        ; work         ;
-;    |PLL_main:inst1|                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main        ; pll_main     ;
-;       |PLL_main_0002:pll_main_inst|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst                                ; PLL_main_0002   ; PLL_main     ;
-;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i        ; altera_pll      ; work         ;
-;    |SCOMP:inst|                           ; 248 (212)           ; 187 (187)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP           ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_q934:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated ; altsyncram_q934 ; work         ;
-;       |lpm_clshift:shifter|               ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift     ; work         ;
-;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                               ; TIMER           ; work         ;
-;    |clk_div:inst5|                        ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                             ; clk_div         ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-----------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Entity Name       ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-------------------+--------------+
+; |SCOMP_System                             ; 429 (10)            ; 234 (0)                   ; 32768             ; 0          ; 64   ; 0            ; |SCOMP_System                                                                           ; SCOMP_System      ; work         ;
+;    |ADV_HEX_DISP_CTRL:inst3|              ; 91 (91)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3                                                   ; ADV_HEX_DISP_CTRL ; work         ;
+;    |DIG_IN:inst7|                         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN            ; work         ;
+;    |DIG_OUT:inst6|                        ; 2 (2)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT           ; work         ;
+;    |PLL_main:inst1|                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main          ; pll_main     ;
+;       |PLL_main_0002:pll_main_inst|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst                                ; PLL_main_0002     ; PLL_main     ;
+;          |altera_pll:altera_pll_i|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i        ; altera_pll        ; work         ;
+;    |SCOMP:inst|                           ; 282 (249)           ; 187 (187)                 ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP             ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram        ; work         ;
+;          |altsyncram_q934:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated ; altsyncram_q934   ; work         ;
+;       |lpm_clshift:shifter|               ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift       ; work         ;
+;    |TIMER:inst4|                          ; 18 (18)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|TIMER:inst4                                                               ; TIMER             ; work         ;
+;    |clk_div:inst5|                        ; 25 (25)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SCOMP_System|clk_div:inst5                                                             ; clk_div           ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -331,6 +324,100 @@ Encoding Type:  One-Hot
 +-----------------+---------------+--------------+--------------+-------------+---------------+-----------------+--------------+----------------+---------------+---------------+---------------+----------------+--------------+-------------+--------------+---------------+--------------+--------------+----------------+-----------------+----------------+---------------+--------------+--------------+-------------+------------+
 
 
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; ADV_HEX_DISP_CTRL:inst3|segments[6]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[5]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[4]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[3]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[2]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[1]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[0]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[13]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[12]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[11]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[10]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[9]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[8]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[7]                 ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[20]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[19]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[18]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[17]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[16]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[15]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[14]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[27]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[26]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[25]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[24]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[23]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[22]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[21]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[34]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[33]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[32]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[31]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[30]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[29]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[28]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[41]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[40]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[39]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[38]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[37]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[36]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments[35]                ; SCOMP:inst|IO_WRITE          ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[6]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[5]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[4]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[3]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[2]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[1]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[0]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[13]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[12]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[11]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[10]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[9]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[8]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[7]             ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[20]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[19]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[18]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[17]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[16]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[15]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[14]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[27]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[26]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[25]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[24]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[23]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[22]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[21]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[34]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[33]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[32]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[31]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[30]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[29]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[28]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[41]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[40]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[39]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[38]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[37]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[36]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; ADV_HEX_DISP_CTRL:inst3|segments_mem[35]            ; ADV_HEX_DISP_CTRL:inst3|Mux2 ; yes                    ;
+; Number of user-specified and inferred latches = 84  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +--------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                             ;
 +---------------------------------------+----------------------------------------+
@@ -347,27 +434,32 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 258   ;
+; Total registers                              ; 234   ;
 ; Number of registers using Synchronous Clear  ; 30    ;
 ; Number of registers using Synchronous Load   ; 110   ;
-; Number of registers using Asynchronous Clear ; 74    ;
+; Number of registers using Asynchronous Clear ; 50    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 163   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 110 bits  ; 220 LEs       ; 0 LEs                ; 220 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[3][4] ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[11]         ;
-; 13:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[3]          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[3]                ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |SCOMP_System|SCOMP:inst|Add1           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
+; 3:1                ; 110 bits  ; 220 LEs       ; 0 LEs                ; 220 LEs                ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[2][2]     ;
+; 12:1               ; 15 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|SCOMP:inst|AC[15]             ;
+; 13:1               ; 11 bits   ; 88 LEs        ; 22 LEs               ; 66 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]             ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|IO_DATA[4]                    ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux45 ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux39 ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux31 ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux21 ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux13 ;
+; 1:1                ; 7 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|ADV_HEX_DISP_CTRL:inst3|Mux6  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -377,6 +469,91 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                  ;
 +---------------------------------+--------------------+------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+-----------------------------+
+; Parameter Name                     ; Value                ; Type                        ;
++------------------------------------+----------------------+-----------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                     ;
+; WIDTH_A                            ; 16                   ; Signed Integer              ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer              ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer              ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
+; WIDTH_B                            ; 1                    ; Signed Integer              ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer              ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer              ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer              ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer              ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
+; INIT_FILE                          ; MyRandomLSBGame.mif  ; Untyped                     ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer              ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer              ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_q934      ; Untyped                     ;
++------------------------------------+----------------------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter ;
++----------------+-----------------+------------------------------------------+
+; Parameter Name ; Value           ; Type                                     ;
++----------------+-----------------+------------------------------------------+
+; LPM_PIPELINE   ; 0               ; Untyped                                  ;
+; CBXI_PARAMETER ; lpm_clshift_fuc ; Untyped                                  ;
+; LPM_WIDTH      ; 16              ; Signed Integer                           ;
+; LPM_WIDTHDIST  ; 4               ; Signed Integer                           ;
+; LPM_SHIFTTYPE  ; arithmetic      ; Untyped                                  ;
++----------------+-----------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; LPM_WIDTH      ; 16    ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -626,91 +803,6 @@ Encoding Type:  One-Hot
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+-----------------------------+
-; Parameter Name                     ; Value                ; Type                        ;
-+------------------------------------+----------------------+-----------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                     ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                  ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE              ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                     ;
-; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                     ;
-; WIDTH_A                            ; 16                   ; Signed Integer              ;
-; WIDTHAD_A                          ; 11                   ; Signed Integer              ;
-; NUMWORDS_A                         ; 2048                 ; Signed Integer              ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                     ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                     ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                     ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                     ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                     ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                     ;
-; WIDTH_B                            ; 1                    ; Signed Integer              ;
-; WIDTHAD_B                          ; 1                    ; Signed Integer              ;
-; NUMWORDS_B                         ; 0                    ; Signed Integer              ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                     ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                     ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                     ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                     ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                     ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                     ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                     ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                     ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                     ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                     ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                     ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer              ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer              ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                     ;
-; BYTE_SIZE                          ; 8                    ; Signed Integer              ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                     ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                     ;
-; INIT_FILE                          ; MyRandomLSBGame.mif  ; Untyped                     ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                     ;
-; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer              ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                     ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                     ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                     ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                     ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                     ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                     ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                     ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                     ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer              ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                     ;
-; CBXI_PARAMETER                     ; altsyncram_q934      ; Untyped                     ;
-+------------------------------------+----------------------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_CLSHIFT:shifter ;
-+----------------+-----------------+------------------------------------------+
-; Parameter Name ; Value           ; Type                                     ;
-+----------------+-----------------+------------------------------------------+
-; LPM_PIPELINE   ; 0               ; Untyped                                  ;
-; CBXI_PARAMETER ; lpm_clshift_fuc ; Untyped                                  ;
-; LPM_WIDTH      ; 16              ; Signed Integer                           ;
-; LPM_WIDTHDIST  ; 4               ; Signed Integer                           ;
-; LPM_SHIFTTYPE  ; arithmetic      ; Untyped                                  ;
-+----------------+-----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: SCOMP:inst|LPM_BUSTRI:io_bus ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; LPM_WIDTH      ; 16    ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: TIMER:inst4|LPM_BUSTRI:IO_BUS ;
 +----------------+-------+---------------------------------------------------+
@@ -746,33 +838,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 258                         ;
-;     CLR               ; 74                          ;
+; arriav_ff             ; 234                         ;
+;     CLR               ; 50                          ;
 ;     ENA               ; 42                          ;
 ;     ENA SCLR          ; 11                          ;
 ;     ENA SLD           ; 110                         ;
 ;     SCLR              ; 19                          ;
 ;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 367                         ;
-;     arith             ; 62                          ;
-;         1 data inputs ; 45                          ;
-;         2 data inputs ; 1                           ;
-;         5 data inputs ; 16                          ;
+; arriav_lcell_comb     ; 429                         ;
+;     arith             ; 77                          ;
+;         1 data inputs ; 44                          ;
+;         2 data inputs ; 33                          ;
 ;     extend            ; 2                           ;
 ;         7 data inputs ; 2                           ;
-;     normal            ; 303                         ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 50                          ;
-;         4 data inputs ; 50                          ;
-;         5 data inputs ; 102                         ;
-;         6 data inputs ; 81                          ;
+;     normal            ; 334                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 24                          ;
+;         3 data inputs ; 79                          ;
+;         4 data inputs ; 57                          ;
+;         5 data inputs ; 88                          ;
+;         6 data inputs ; 85                          ;
+;     shared            ; 16                          ;
+;         2 data inputs ; 16                          ;
 ; boundary_port         ; 64                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 16                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.30                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -781,7 +874,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -791,45 +884,205 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Jul  1 17:35:55 2025
+    Info: Processing started: Fri Jul 11 18:04:47 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
-Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file adv_hex_disp_ctrl.vhd
+    Info (12022): Found design unit 1: ADV_HEX_DISP_CTRL-arch File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 20
+    Info (12023): Found entity 1: ADV_HEX_DISP_CTRL File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 20
-    Info (12023): Found entity 1: DIG_IN File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/DIG_IN.vhd Line: 11
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 20
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 29
-    Info (12023): Found entity 1: TIMER File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/TIMER.vhd Line: 29
+    Info (12023): Found entity 1: TIMER File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: PLL_main-rtl File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 20
-    Info (12023): Found entity 1: PLL_main File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 11
+    Info (12022): Found design unit 1: PLL_main-rtl File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main.vhd Line: 20
+    Info (12023): Found entity 1: PLL_main File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file pll_main/pll_main_0002.v
-    Info (12023): Found entity 1: PLL_main_0002 File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 2
+    Info (12023): Found entity 1: PLL_main_0002 File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main/PLL_main_0002.v Line: 2
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
-Info (12128): Elaborating entity "HEX_DISP_6" for hierarchy "HEX_DISP_6:inst9"
-Info (12128): Elaborating entity "HEX_DISP" for hierarchy "HEX_DISP_6:inst9|HEX_DISP:inst1"
+Info (12128): Elaborating entity "ADV_HEX_DISP_CTRL" for hierarchy "ADV_HEX_DISP_CTRL:inst3"
+Warning (10492): VHDL Process Statement warning at ADV_HEX_DISP_CTRL.vhd(41): signal "segments_mem" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 41
+Warning (10631): VHDL Process Statement warning at ADV_HEX_DISP_CTRL.vhd(36): inferring latch(es) for signal or variable "segments", which holds its previous value in one or more paths through the process File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Warning (10631): VHDL Process Statement warning at ADV_HEX_DISP_CTRL.vhd(46): inferring latch(es) for signal or variable "segments_mem", which holds its previous value in one or more paths through the process File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[0]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[1]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[2]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[3]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[4]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[5]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[6]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[7]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[8]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[9]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[10]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[11]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[12]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[13]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[14]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[15]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[16]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[17]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[18]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[19]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[20]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[21]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[22]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[23]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[24]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[25]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[26]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[27]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[28]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[29]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[30]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[31]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[32]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[33]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[34]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[35]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[36]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[37]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[38]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[39]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[40]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments_mem[41]" at ADV_HEX_DISP_CTRL.vhd(46) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+Info (10041): Inferred latch for "segments[0]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[1]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[2]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[3]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[4]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[5]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[6]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[7]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[8]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[9]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[10]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[11]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[12]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[13]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[14]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[15]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[16]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[17]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[18]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[19]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[20]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[21]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[22]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[23]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[24]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[25]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[26]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[27]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[28]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[29]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[30]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[31]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[32]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[33]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[34]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[35]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[36]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[37]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[38]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[39]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[40]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (10041): Inferred latch for "segments[41]" at ADV_HEX_DISP_CTRL.vhd(36) File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 36
+Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 63
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 63
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 63
+    Info (12134): Parameter "address_aclr_a" = "UNUSED"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "CYCLONE V"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "MyRandomLSBGame.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "2048"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "11"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q934.tdf
+    Info (12023): Found entity 1: altsyncram_q934 File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/db/altsyncram_q934.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_q934" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 90
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 90
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 90
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_WIDTHDIST" = "4"
+    Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 114
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 114
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 114
+    Info (12134): Parameter "LPM_WIDTH" = "16"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main.vhd Line: 32
-Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
+Info (12128): Elaborating entity "PLL_main_0002" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main.vhd Line: 32
+Info (12128): Elaborating entity "altera_pll" for hierarchy "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main/PLL_main_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
-Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/PLL_main/PLL_main_0002.v Line: 85
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main/PLL_main_0002.v Line: 85
+Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_inst|altera_pll:altera_pll_i" with the following parameter: File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/PLL_main/PLL_main_0002.v Line: 85
     Info (12134): Parameter "fractional_vco_multiplier" = "false"
     Info (12134): Parameter "reference_clock_frequency" = "50.0 MHz"
     Info (12134): Parameter "operation_mode" = "direct"
@@ -890,113 +1143,126 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|PLL_main_0002:pll_main_i
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 63
-    Info (12134): Parameter "address_aclr_a" = "UNUSED"
-    Info (12134): Parameter "address_aclr_b" = "NONE"
-    Info (12134): Parameter "address_reg_b" = "CLOCK1"
-    Info (12134): Parameter "byte_size" = "8"
-    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
-    Info (12134): Parameter "byteena_aclr_b" = "NONE"
-    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
-    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
-    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
-    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
-    Info (12134): Parameter "intended_device_family" = "CYCLONE V"
-    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
-    Info (12134): Parameter "enable_ecc" = "FALSE"
-    Info (12134): Parameter "implement_in_les" = "OFF"
-    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
-    Info (12134): Parameter "indata_aclr_b" = "NONE"
-    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
-    Info (12134): Parameter "init_file" = "MyRandomLSBGame.mif"
-    Info (12134): Parameter "init_file_layout" = "PORT_A"
-    Info (12134): Parameter "maximum_depth" = "0"
-    Info (12134): Parameter "numwords_a" = "2048"
-    Info (12134): Parameter "numwords_b" = "0"
-    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
-    Info (12134): Parameter "outdata_aclr_a" = "NONE"
-    Info (12134): Parameter "outdata_aclr_b" = "NONE"
-    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
-    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
-    Info (12134): Parameter "ram_block_type" = "AUTO"
-    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
-    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
-    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
-    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
-    Info (12134): Parameter "width_a" = "16"
-    Info (12134): Parameter "width_b" = "1"
-    Info (12134): Parameter "width_byteena_a" = "1"
-    Info (12134): Parameter "width_byteena_b" = "1"
-    Info (12134): Parameter "width_eccstatus" = "3"
-    Info (12134): Parameter "widthad_a" = "11"
-    Info (12134): Parameter "widthad_b" = "1"
-    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
-    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
-    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
-    Info (12134): Parameter "lpm_type" = "altsyncram"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_q934.tdf
-    Info (12023): Found entity 1: altsyncram_q934 File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/db/altsyncram_q934.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_q934" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_q934:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 90
-    Info (12134): Parameter "LPM_WIDTH" = "16"
-    Info (12134): Parameter "LPM_WIDTHDIST" = "4"
-    Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
-    Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/SCOMP.vhd Line: 114
-    Info (12134): Parameter "LPM_WIDTH" = "16"
-    Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10492): VHDL Process Statement warning at TIMER.vhd(48): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/TIMER.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at TIMER.vhd(48): signal "IO_WRITE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/TIMER.vhd Line: 48
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Info (12128): Elaborating entity "DIG_OUT" for hierarchy "DIG_OUT:inst6"
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
-    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
-    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: E:/ECE2031Labs/My_SCOMP_Lab8/SCOMP_Lab8_Sum25/HEX_DISP.vhd Line: 25
+    Warning (13048): Converted tri-state node "IO_DATA[15]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[14]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[13]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[12]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[11]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[10]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/SCOMP.vhd Line: 132
+    Warning (13048): Converted tri-state node "IO_DATA[9]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[8]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[7]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[6]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[5]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[4]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[3]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[2]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[1]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+    Warning (13048): Converted tri-state node "IO_DATA[0]" into a selector File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 50
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[6] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[5] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[4] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[3] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[2] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[1] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[0] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[13] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[12] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[11] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[10] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[9] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[8] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[7] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[20] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[19] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[18] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[17] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[16] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[15] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[14] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[27] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[26] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[25] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[24] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[23] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[22] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[21] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[34] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[33] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[32] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[31] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[30] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[29] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[28] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[41] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[40] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[39] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[38] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[37] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[36] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
+Warning (13012): Latch ADV_HEX_DISP_CTRL:inst3|segments_mem[35] has unsafe behavior File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/ADV_HEX_DISP_CTRL.vhd Line: 46
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal DIG_IN:inst7|CHIP_SELECT File: C:/Users/klaed/Desktop/ECE2031-Peripheral-Project/DIG_IN.vhd Line: 21
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 5 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 609 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 659 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 528 logic cells
+    Info (21061): Implemented 578 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 5016 megabytes
-    Info: Processing ended: Tue Jul  1 17:36:08 2025
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 105 warnings
+    Info: Peak virtual memory: 5025 megabytes
+    Info: Processing ended: Fri Jul 11 18:04:53 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:11
 
 
