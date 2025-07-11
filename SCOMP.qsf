@@ -139,6 +139,7 @@ set_location_assignment PIN_AF19 -to HEX5[5]
 set_location_assignment PIN_AB21 -to HEX5[6]
 
 set_global_assignment -name ADVANCED_PHYSICAL_OPTIMIZATION OFF
+set_global_assignment -name VHDL_FILE ADV_HEX_DISP_CTRL.vhd
 set_global_assignment -name VHDL_FILE HEX_DISP.vhd
 set_global_assignment -name VHDL_FILE DIG_OUT.vhd
 set_global_assignment -name VHDL_FILE DIG_IN.vhd
