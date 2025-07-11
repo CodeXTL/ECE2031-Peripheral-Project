@@ -18,9 +18,19 @@ ENTITY ADV_HEX_DISP_CTRL IS
 END ADV_HEX_DISP_CTRL;
 
 ARCHITECTURE arch OF ADV_HEX_DISP_CTRL IS
-	SIGNAL segments_mem : STD_LOGIC_VECTOR(41 DOWNTO 0);
+	TYPE MODE_TYPE IS ( segment, shape, shift, decimal );
 
-BEGIN
+	SIGNAL segments_mem 	: STD_LOGIC_VECTOR(41 DOWNTO 0);
+	SIGNAL nio_addr		: STD_LOGIC_VECTOR(10 DOWNTO 0);
+	SIGNAL mode				: MODE_TYPE;
 	
+BEGIN
+	WITH io_addr SELECT
+		mode <= 	segment 	WHEN "0000000011",
+					shape		WHEN "0000000100",
+					shift		WHEN "0000000101",
+					decimal	WHEN "0000000110";
+	
+	segments_mem <= (others => '0') WHEN (resetn = 0);
 	
 END arch;
