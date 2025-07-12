@@ -22,6 +22,7 @@ ARCHITECTURE arch OF ADV_HEX_DISP_CTRL IS
 
 	SIGNAL segments_mem 	: STD_LOGIC_VECTOR(41 DOWNTO 0);
 	SIGNAL nio_addr		: STD_LOGIC_VECTOR(10 DOWNTO 0);
+	SIGNAL shift_buffer	: STD_LOGIC_VECTOR(6 DOWNTO 0) := "0000000";
 	SIGNAL mode				: MODE_TYPE;
 	
 BEGIN
@@ -60,6 +61,15 @@ BEGIN
 						segments_mem(34 DOWNTO 28) <= NOT io_data(6 DOWNTO 0);
 					WHEN "101" =>	-- 6th display from right
 						segments_mem(41 DOWNTO 35) <= NOT io_data(6 DOWNTO 0);
+					WHEN OTHERS =>
+						NULL;
+				END CASE;
+			WHEN m_shift =>
+				CASE io_data(0 DOWNTO 0) IS
+					WHEN "0" => -- shift left
+						segments_mem(41 DOWNTO 0) <= segments_mem(34 DOWNTO 0) & shift_buffer;
+					WHEN "1" => -- shift right
+						segments_mem(41 DOWNTO 0) <= shift_buffer & segments_mem(41 DOWNTO 7);
 					WHEN OTHERS =>
 						NULL;
 				END CASE;
